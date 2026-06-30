@@ -1,0 +1,45 @@
+DESAFIO 1 - VISÃO COMPUTACIONAL (Desfoque de Fundo)
+=====================================================
+
+CONTEÚDO DO PACOTE:
+- VC_Desafio_1_Completo.ipynb  -> Notebook com o código completo
+- desafio_1.jpeg                -> Imagem usada no exercício
+- haarcascade_frontalface_default.xml -> Modelo de detecção de face
+
+COMO USAR NO GOOGLE COLAB:
+---------------------------
+1. Acesse https://colab.research.google.com
+2. Clique em "Arquivo" > "Fazer upload de notebook" e selecione o arquivo
+   VC_Desafio_1_Completo.ipynb
+
+3. No menu lateral esquerdo, clique no ícone de pasta (Arquivos).
+
+4. Clique no ícone de upload (uma folha com seta para cima) e envie os
+   dois arquivos:
+   - desafio_1.jpeg
+   - haarcascade_frontalface_default.xml
+
+   IMPORTANTE: esses arquivos devem ficar na pasta raiz "/content/"
+   (é o local padrão onde o Colab coloca os uploads). Não precisa
+   criar subpastas.
+
+5. Agora é só executar as células do notebook em ordem
+   (Ambiente de execução > Executar tudo, ou célula por célula com Shift+Enter).
+
+OBSERVAÇÃO:
+------------
+Os arquivos enviados na aba "Arquivos" do Colab são temporários:
+eles são apagados quando a sessão é encerrada ou reiniciada. Então,
+se você desconectar e reconectar, será preciso enviar os dois
+arquivos (.jpeg e .xml) novamente antes de rodar o notebook.
+
+Se preferir não reenviar a cada vez, você pode salvar esses dois
+arquivos no seu Google Drive e montar o Drive no início do notebook:
+
+    from google.colab import drive
+    drive.mount('/content/drive')
+
+E então ajustar os caminhos no código, por exemplo:
+
+    image_bgr = cv2.imread("/content/drive/MyDrive/SuaPasta/desafio_1.jpeg")
+    detec = cv2.CascadeClassifier("/content/drive/MyDrive/SuaPasta/haarcascade_frontalface_default.xml")
