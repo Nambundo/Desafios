@@ -1,16 +1,18 @@
-# Desafio 1 da Trilha de Visão Computacional --- Solução Alternativa
+# Desafio 1 da Trilha de Visão Computacional --- Solução 
 
-## Descrição
+Este notebook resolve o **mesmo desafio** (borrar o fundo de uma imagem contendo uma pessoa, tipo efeito de vídeo chamada), mas com uma **implementação diferente** da que aparece no gabarito oficial, para fins de estudo e comparação.
 
-Este projeto apresenta uma solução alternativa para o desafio de Visão
-Computacional cujo objetivo é aplicar o efeito de fundo desfocado
-(background blur) em uma imagem contendo uma pessoa, semelhante ao
-utilizado em aplicativos de videoconferência.
+**Principais diferenças em relação ao gabarito:**
 
-A implementação utiliza **OpenCV** e o classificador **Haar Cascade**
-para detectar o rosto. A partir da posição do rosto é criada uma região
-de interesse que representa a pessoa, preservando essa área nítida
-enquanto o restante da imagem recebe um filtro Gaussiano.
+1. Em vez de recortar a face com fatiamento retangular (`image[y:h, x:w]`) e colar de volta, aqui construímos uma **máscara** (imagem preta e branca) que marca onde está a face, e usamos essa máscara para combinar a imagem original com a imagem borrada. Isso é o mesmo princípio usado em ferramentas de recorte/composição em Visão Computacional (ex: `cv2.bitwise_and`, blending com máscara).
+
+2. A máscara usa uma **elipse** ao invés de um retângulo, e passa por um **blur** para suavizar as bordas — isso evita o "corte" abrupto e visível entre a área nítida do rosto e o fundo borrado que aparece na solução do gabarito.
+
+3. O código funciona corretamente para **múltiplas faces** na imagem. No gabarito, se `detectMultiScale` encontrar mais de um rosto, o `for` sobrescreve as variáveis `x, y, width, height, face_img` a cada iteração e, no final, só a **última face detectada** fica nítida — as demais ficam borradas. Aqui, cada face detectada é adicionada à máscara.
+
+4. No final, comparamos visualmente a imagem original, a máscara, a versão totalmente borrada e o resultado final lado a lado.
+
+Ao final do notebook há uma seção explicando essas diferenças em mais detalhes.
 
 ## Como a solução funciona
 
@@ -62,10 +64,3 @@ células em ordem.
 Ao final da execução: - O rosto é detectado automaticamente. - A região
 da pessoa permanece nítida. - O fundo recebe um efeito de desfoque
 suave, simulando o efeito de vídeo chamada.
-
-## Observações
-
-Esta implementação foi desenvolvida como uma alternativa ao gabarito
-oficial para fins de estudo e comparação de abordagens. O método pode
-ser aprimorado utilizando técnicas modernas de segmentação, como
-MediaPipe Selfie Segmentation, U²-Net ou YOLO-Seg.
