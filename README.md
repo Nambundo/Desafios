@@ -23,11 +23,13 @@ Cada desafio foi desenvolvido seguindo os requisitos da trilha, podendo conter i
 ## ✅ Desafio 1 – Background Blur (Efeito de Vídeo Chamada)
 
 Neste desafio, você irá implementar uma solução simples para aplicar o efeito de desfoque no fundo de uma imagem contendo uma pessoa, de forma semelhante ao recurso utilizado em aplicativos de videochamadas.
+
 ---
 
 ## ✅ Desafio 2 – Reconhecimento Facial
 
 Neste desafio, você irá implementar uma solução simples de reconhecimento facial, semelhante às utilizadas em sistemas de controle de acesso a áreas restritas.
+
 ---
 
 ## ✅ Desafio 3 – Rastreamento de Objetos
