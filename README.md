@@ -44,28 +44,6 @@ Neste desafio, você irá implementar uma solução simples para rastreamento de
  
 ---
 
-# Estrutura do repositório
-
-```
-📂 desafio-1
-├── VC_Desafio_1_resolvido.ipynb
-├── haarcascade_frontalface_default.xml
-└── imagens/
-
-📂 desafio-2
-├── reconhecimento_facial.ipynb
-└── imagens/
-
-📂 desafio-3
-├── rastreamento_objetos.ipynb
-└── videos/
-
-📂 desafio-4
-└── reconhecimento_poses.ipynb
-```
-
----
-
 # Como executar
 
 1. Clone este repositório:
