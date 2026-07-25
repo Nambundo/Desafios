@@ -1,6 +1,6 @@
-# Desafio 2 — Reconhecimento Facial (Solução Alternativa)
+# Desafio 2 — Reconhecimento Facial
 
-Este README documenta o que foi feito neste notebook em relação ao **gabarito oficial** do Desafio 2 da Trilha de Visão Computacional, para servir de referência de estudo e comparação.
+Este README documenta o que foi feito neste notebook do Desafio 2 da Trilha de Visão Computacional, para servir de referência de estudo e comparação.
 
 ## Objetivo do desafio (igual em ambos)
 
